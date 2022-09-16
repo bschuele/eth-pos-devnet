@@ -12,6 +12,10 @@ services:
   # APIs to allow for proof-of-stake consensus via Prysm.
   geth:
     image: "ethereum/client-go:latest"
+    environment:
+      - LETSENCRYPT_HOST=ether.schuele.ch
+      - VIRTUAL_HOST=ether.schuele.ch
+      - VIRTUAL_PORT=8545
     command:
       - --http
       - --http.api=eth
