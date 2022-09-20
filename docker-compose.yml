@@ -18,8 +18,10 @@ services:
       - VIRTUAL_PORT=8545
     command:
       - --http
-      - --http.api=eth
+      - --http.vhosts=*
+      - --http.api=eth,web3,net,admin,personal
       - --http.addr=0.0.0.0
+      - --http.corsdomain=*
       - --authrpc.vhosts=*
       - --authrpc.addr=0.0.0.0
       - --authrpc.jwtsecret=/execution/jwtsecret
